@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-#dic = {0 : 'cat', 1 : 'dog', 2 :"horse", 3:'human'}
+
 
 # Define a mapping of class indices to class names
 class_mapping = {
@@ -21,15 +21,7 @@ class_mapping = {
 }
 
 
-# model = load_model('model.h5')
-# model._make_predict_function()
 
-# def predict_label(img_path):
-# 	i = image.load_img(img_path, target_size=(100,100))
-# 	i = image.img_to_array(i)
-# 	i = i.reshape(1, 100,100,3)
-# 	p = model.predict_classes(i)
-# 	return dic[p[0]]
 
 model = load_model('Identification_model_.h5')
 #model._make_predict_function()
@@ -85,8 +77,6 @@ def get_hours():
 		img_path = "static/" + img.filename	
 		img.save(img_path)
 		predicted_class = predict_image_class(img_path, threshold=0.7)
-        # load_and_preprocess_image(image_path)
-        # predicted_class_name = predict_image_class(image_path, threshold=0.7)
 
 
 
